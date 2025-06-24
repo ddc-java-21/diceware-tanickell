@@ -14,14 +14,14 @@ import org.springframework.core.io.Resource;
 import org.springframework.stereotype.Service;
 
 @Service
-public class ResourceWordProvider implements WordProvider {
+class ResourceWordProvider implements WordProvider {
 
   private static final Pattern WORD_EXTRACTOR = Pattern.compile("^\\s*\\d+\\s+(.*?)\\s*?$");
 
   private final List<String> words;
 
   @Autowired
-  public ResourceWordProvider(@Value("${diceware.word-list}") String wordListResource) {
+  ResourceWordProvider(@Value("${diceware.word-list}") String wordListResource) {
     Resource resource = new ClassPathResource(wordListResource);
     try (Stream<String> lines = Files.lines(Paths.get(resource.getURI()))) {
       words = lines

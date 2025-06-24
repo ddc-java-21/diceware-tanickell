@@ -8,13 +8,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
-public class PassphraseService implements AbstractPassphraseService {
+class PassphraseService implements AbstractPassphraseService {
 
   private final List<String> words; // DONE: 6/24/25 Add field for abstract word provider.
   private final RandomGenerator rng;
 
   @Autowired
-  public PassphraseService(WordProvider wordProvider, RandomGenerator rng) {
+  PassphraseService(WordProvider wordProvider, RandomGenerator rng) {
     words = new ArrayList<>(wordProvider.provide()); // performant random access
     this.rng = rng;
   }
