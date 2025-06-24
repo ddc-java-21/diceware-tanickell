@@ -1,0 +1,21 @@
+### Request passphrase
+GET http://localhost:18981/diceware/passphrases/generate
+Accept: application/xml;q=0.9,application/json;q=0.8
+Content-Type: application/json
+
+{
+  "a": 1
+}
+
+### Request passphrase
+GET http://localhost:18981/diceware/passphrases/generate?length=10
+Accept: application/json
+
+### Request passphrase
+GET http://localhost:18981/diceware/passphrases/generate?delimiter=-&length=8
+Accept: text/plain
+
+<> 2025-06-24T104309.200.json
+<> 2025-06-24T104107.200.json
+<> 2025-06-24T104002.200.json
+<> 2025-06-24T103918.200.json

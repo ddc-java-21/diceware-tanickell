@@ -25,4 +25,12 @@ public class PassphraseController {
     return passphraseService.generate(length);
   }
 
+  @GetMapping(path = "/generate", produces = MediaType.TEXT_PLAIN_VALUE)
+  public String generate(
+      @RequestParam(required = false, defaultValue = "5") int length,
+      @RequestParam(required = false, defaultValue = " ") String delimiter
+    ) {
+    return String.join(delimiter, passphraseService.generate(length));
+  }
+
 }

@@ -27,8 +27,7 @@ public class ResourceWordProvider implements WordProvider {
       words = lines
           .map(WORD_EXTRACTOR::matcher)
           .filter(Matcher::matches)
-          .map((matcher) -> matcher.group(1))
-          //.map((matcher) -> matcher.replaceAll("$1"))
+          .map((matcher) -> matcher.group(1))           //.map((matcher) -> matcher.replaceAll("$1"))
           .filter((word) -> !word.isBlank())
           .toList();
     } catch (IOException e) {
